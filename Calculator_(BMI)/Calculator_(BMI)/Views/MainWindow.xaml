@@ -5,8 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator__BMI_"
         mc:Ignorable="d"
-        Title="Calculator BMI" Height="600" Width="400">
+        Title="Calculator BMI" Height="550" Width="320">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--Title-->
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3">
+            <Label x:Name="lblTitleText" Content="OBLICZ SWÓJ WSKAŹNIK" FontSize="14" 
+                   FontFamily="Source Serif Pro Light"/>
+            <Label x:Name="lblTitleSecondText" Content="BMI" FontSize="18" Margin="0 -3" 
+                   FontWeight="Bold" FontFamily="Source Serif Pro Semibold"/>
+        </WrapPanel>
+       <!--Gender-->
+            <Label x:Name="lblGenderText" Content="Płeć:" FontSize="14" FontFamily="Arial Nova Cond" 
+                   Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <WrapPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <RadioButton x:Name="rbtnMale" Content="M" VerticalAlignment="Center" Margin="5 0"
+                         FontFamily="Arial Nova Cond" FontSize="14"/>
+            <RadioButton x:Name="rbtnFemale" Content="K" VerticalAlignment="Center" Margin="5 0" 
+                         FontFamily="Arial Nova Cond" FontSize="14"/>
+        </WrapPanel>
+        <!--DataWeight-->
+        <Label x:Name="lblWeight" Content="Waga:" FontSize="14" FontFamily="Arial Nova Cond" 
+                   Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbWeight" Grid.Row="2" Grid.Column="1" Height="25" Width="110"/>
+        <Label Content="kg" FontSize="14" FontFamily="Arial Nova Cond" Grid.Row="2" 
+               Grid.Column="2" VerticalAlignment="Center"/>
+        <!--DataHeight-->
+        <Label x:Name="lblHeight" Content="Wzrost:" FontSize="14" FontFamily="Arial Nova Cond" 
+                   Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbHeight" Grid.Row="3" Grid.Column="1" Height="25" Width="110"/>
+        <Label Content="cm" FontSize="14" FontFamily="Arial Nova Cond" Grid.Row="3" Grid.Column="2" 
+               VerticalAlignment="Center"/>
+        <!--Button-->
+        <Button x:Name="btnCalculate" Content="OBLICZ" Grid.Row="4" Grid.Column="1" Height="30" 
+                Width="100"/>
+        <!--Result-->
+        <Rectangle Width="250" Height="1" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="3" Fill="#FFDADADA"/>
+        <WrapPanel Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="lblResultText" Content="Twój Wynik:"  FontSize="14" FontFamily="Verdana Pro Cond Semibold" />
+            <TextBlock x:Name="tblResult" Text="0" FontSize="18" FontFamily="Verdana Pro Cond Semibold" Margin="0 2"/>
+        </WrapPanel>
+        <Rectangle Width="250" Height="1" Grid.Row="5" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Fill="#FFDADADA"/>
+        <!--Description-->
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="3" Margin="0 5">
+            <Label x:Name="lblDescriptionTitle" Content="Zakresy wartości BMI:" FontWeight="Bold" FontFamily="Verdana Pro Cond Semibold" HorizontalAlignment="Center"/>
+            <Label Content="mniej niż 16 - wygłodzenie" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="16 - 16.99 - wychudzenie" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="17 - 18.49 - niedowagae" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="18.5 - 24.99 - wartość prawidłowa" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="25 - 29.99 - nadwaga" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="30 - 34.99 - I stopień otyłości" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="35 - 39.99 - II stopień otyłości" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+            <Label Content="powyżej 40 - otyłość skrajna" FontWeight="Bold" FontFamily="Verdana Pro Cond Light" FontSize="11" HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Window>
